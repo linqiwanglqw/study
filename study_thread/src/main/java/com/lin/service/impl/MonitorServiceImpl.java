@@ -58,7 +58,7 @@ public class MonitorServiceImpl implements MonitorService {
     private void handle(AtomicInteger exceptionCount, List<String> strings) {
         for (String string : strings) {
             //大于10000即为异常
-            if(Integer.parseInt(string)>90000){
+            if(Integer.parseInt(string)>1000){
                 exceptionCount.incrementAndGet();
             }
         }
@@ -66,7 +66,7 @@ public class MonitorServiceImpl implements MonitorService {
 
     private List<String> inintDataList() {
         ArrayList<String> list = new ArrayList<>();
-        for (int i = 1; i <= 100000; i++) {
+        for (int i = 1; i <= 50000; i++) {
             list.add(String.valueOf(i));
         }
         return list;

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.easyExecl.mapper.ExeclMapper">
+    <insert id="save" parameterType="list">
+        insert  into student (name,age,birthday) values
+        <foreach collection="list" index="index" item="execlData" open="" close=""  separator=",">
+            (#{execlData.name},#{execlData.age},#{execlData.birthday})
+        </foreach>
+    </insert>
+
+</mapper>
